@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>TCP round trip time, timeout</title>
+  </head>
+  <body>
+    <div id="content-wrapper">
+      <div class="flexRow">
+        <div>
+          <div class="flexRow">
+            <span class="MinMaxSpanInput">Min RTT</span
+            ><input
+              id="minRTTinput"
+              class="MinMaxInput"
+              type="number"
+              placeholder="100"
+              title="Enter Min Value"
+            />
+          </div>
+          <div class="flexRow">
+            <span class="MinMaxSpanInput">Max RTT</span
+            ><input
+              id="maxRTTinput"
+              class="MinMaxInput"
+              type="number"
+              placeholder="350"
+              title="Enter Max Value"
+            />
+          </div>
+          <div class="flexRow">
+            <span class="MinMaxSpanInput">Baseline</span
+            ><input
+              id="baselineInput"
+              class="MinMaxInput"
+              type="number"
+              placeholder="200"
+              title="Start RTT"
+            />
+          </div>
+          <div class="flexRow">
+            <span class="MinMaxSpanInput">Deviation</span
+            ><input
+              id="deviationInput"
+              class="MinMaxInput"
+              type="range"
+              title="Deviation from Baseline"
+            />
+          </div>
+          <div class="flexRow">
+            <span class="MinMaxSpanInput">Time-Points</span
+            ><input
+              id="pointsInput"
+              class="MinMaxInput"
+              type="number"
+              placeholder="100"
+              title="Point Count"
+            />
+          </div>
+          <div class="flexRow">
+            <span class="MinMaxSpanInput">α</span
+            ><input
+              id="alphaInput"
+              class="MinMaxInput"
+              type="range"
+              title="alpha EstimatedRTT Value"
+            />
+          </div>
+          <div class="flexRow">
+            <span class="MinMaxSpanInput">β</span
+            ><input
+              id="betaInput"
+              class="MinMaxInput"
+              type="range"
+              title="beta DevRTT Value"
+            />
+          </div>
+        </div>
+        <div id="button-wrapper">
+          <button class="button" id="rdmGenButton">random generation</button>
+          <div class="checkboxWrapper">
+            <span class="CheckboxSpanInput">show EstimatedRTT</span
+            ><input type="checkbox" id="erttCheckbox" />
+          </div>
+          <div class="checkboxWrapper">
+            <span class="CheckboxSpanInput">show DevRTT</span
+            ><input type="checkbox" id="devrttCheckbox" />
+          </div>
+          <div class="checkboxWrapper">
+            <span class="CheckboxSpanInput">show TimeoutInterval</span
+            ><input type="checkbox" id="timeoutCheckbox" />
+          </div>
+        </div>
+      </div>
+      <div class="flexRow">
+        <span id="yAxisText">RTT (milliseconds)</span>
+        <div style="display: flex; flex-direction: column">
+          <canvas id="canvas" width="1200" height="360"></canvas>
+          <span id="xAxisText">time (seconds)</span>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

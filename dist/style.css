@@ -1,0 +1,82 @@
+
+html {
+  font-family: Consolas;
+}
+
+body {
+  font-size: 1.7rem;
+}
+
+.MinMaxSpanInput {
+  margin-right: 0.8rem;
+  font-size: 1rem;
+  width: 8rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.MinMaxInput {
+  font-size: 1rem;
+  width: 5rem;
+  text-align: center;
+}
+
+
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.1rem;
+}
+
+#button-wrapper{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+  
+}
+
+.button {
+  font-size: 1rem;
+  margin: 0.1rem;
+  text-align: left;
+}
+
+.checkboxWrapper {
+  display: flex;
+  white-space: nowrap;
+  padding: 0.1rem;
+}
+
+.CheckboxSpanInput {
+  font-size: 1rem;
+  width: 11rem;
+}
+
+#content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#xAxisText{
+  width: 100%;
+  text-align: center;
+}
+
+#yAxisText{
+  width: 4rem;
+  white-space: nowrap;
+  transform: rotate(-90deg) translate(-5.25rem,0);
+}
+
+#canvas {
+  background-color: #d4d4d4;
+  width: 60rem;
+  height: 18rem;
+}
