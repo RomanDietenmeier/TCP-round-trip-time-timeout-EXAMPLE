@@ -52,7 +52,7 @@ function diagram() {
     canvasContext.lineWidth = 7;
     canvasContext.beginPath();
     for (let i = 0; i < state.rttPoints.length; i++) {
-      const canvasX = canvas.width * (i / state.rttPoints.length);
+      const canvasX = canvas.width * (i / (state.rttPoints.length - 1));
       const canvasY =
         canvas.height -
         canvas.height * ((state.rttPoints[i] - minRTT) / (maxRTT - minRTT));
@@ -74,7 +74,7 @@ function diagram() {
     let previousCanvasY = 0;
 
     for (let i = 0; i < points.length; i++) {
-      const canvasX = canvas.width * (i / points.length);
+      const canvasX = canvas.width * (i / (points.length - 1));
       const canvasY =
         canvas.height -
         canvas.height * ((points[i] - minRTT) / (maxRTT - minRTT));
@@ -182,12 +182,14 @@ function diagram() {
     draw();
   }
   function calcTimeoutInterval() {
+    if (state.rttPoints.length <= 0) return;
     const alphaERTT = parseInt(alphaERTTInput.value) / 100;
     const betaDevRTT = parseInt(betaDevRTTInput.value) / 100;
-    state.erttPoints = [];
-    state.devRTTPoints = [];
-    state.timeoutIntervalPoints = [];
-    for (let i = 0; i < state.rttPoints.length; i++) {
+    state.erttPoints = [state.rttPoints[0]];
+    state.devRTTPoints = [0];
+    state.timeoutIntervalPoints = [parseInt(maxRTTinput.value)];
+
+    for (let i = 0; i < state.rttPoints.length - 1; i++) {
       if (i <= 0) {
         state.erttPoints.push(state.rttPoints[i]);
         state.devRTTPoints.push(
