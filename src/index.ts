@@ -186,7 +186,7 @@ function diagram() {
     const alphaERTT = parseInt(alphaERTTInput.value) / 100;
     const betaDevRTT = parseInt(betaDevRTTInput.value) / 100;
     state.erttPoints = [state.rttPoints[0]];
-    state.devRTTPoints = [0];
+    state.devRTTPoints = [];
     state.timeoutIntervalPoints = [parseInt(maxRTTinput.value)];
 
     for (let i = 0; i < state.rttPoints.length - 1; i++) {
